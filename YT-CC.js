@@ -6,6 +6,9 @@ var http = require('http');
 var StringDecoder = require('string_decoder').StringDecoder;
 
 const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
 
 var server = http.createServer(function(req,res){
   var decoder = new StringDecoder('utf-8');
