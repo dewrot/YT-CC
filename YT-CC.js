@@ -5,6 +5,7 @@ const dfpwm = require('dfpwm');
 var http = require('http');
 var StringDecoder = require('string_decoder').StringDecoder;
 
+const PORT = process.env.PORT || 3000;
 
 var server = http.createServer(function(req,res){
   var decoder = new StringDecoder('utf-8');
