@@ -30,7 +30,7 @@ var server = http.createServer(function(req,res){
     console.log('Response sent!');
     console.log('Response:',result);
     console.log('');
-    }
+    };
   });
 });
 
