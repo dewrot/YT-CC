@@ -14,7 +14,13 @@ var server = http.createServer(function(req,res){
   });
   req.on('end',async function(){
     buffer1 += decoder.end();
-
+    
+    if (buffer1 = ''){
+      console.log('');
+      //console.log(timeStamp);
+      console.log('Received empty payload, IGNORING!');
+      console.log('');
+    } else {
     let vidURL = buffer1;
     console.log('');
     //console.log(timeStamp);
@@ -24,6 +30,7 @@ var server = http.createServer(function(req,res){
     console.log('Response sent!');
     console.log('Response:',result);
     console.log('');
+    }
   });
 });
 
