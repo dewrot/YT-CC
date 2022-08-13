@@ -15,11 +15,12 @@ var server = http.createServer(function(req,res){
   req.on('end',async function(){
     buffer1 += decoder.end();
     
-    if (buffer1 = ''){
+    if (buffer1 == ''){
       console.log('');
       //console.log(timeStamp);
       console.log('Received empty payload, IGNORING!');
       console.log('');
+      res.end('YT-CC is online.');
     } else {
     let vidURL = buffer1;
     console.log('');
@@ -41,11 +42,14 @@ server.listen(PORT, () => {
     console.log(`Our app is running on port ${ PORT }`);
     console.log('');
 });
-//server.listen(3000,function(){
-//  console.log('');
-//  console.log(`The server is listening on port 3000 now`);
-//  console.log('');
-//});
+
+/*
+server.listen(3000,function(){
+  console.log('');
+  console.log(`The server is listening on port 3000 now`);
+  console.log('');
+});
+*/
 //cup of coffee
 setInterval(function() {
   https.get(`https://yt-cc.herokuapp.com/`);
