@@ -5,10 +5,6 @@ const dfpwm = require('dfpwm');
 var http = require('http');
 var StringDecoder = require('string_decoder').StringDecoder;
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Our app is running on port ${ PORT }`);
-});
 
 var server = http.createServer(function(req,res){
   var decoder = new StringDecoder('utf-8');
@@ -32,11 +28,17 @@ var server = http.createServer(function(req,res){
 });
 
 
-server.listen(3000,function(){
-  console.log('');
-  console.log(`The server is listening on port 3000 now`);
-  console.log('');
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log('');
+    console.log(`Our app is running on port ${ PORT }`);
+    console.log('');
 });
+//server.listen(3000,function(){
+//  console.log('');
+//  console.log(`The server is listening on port 3000 now`);
+//  console.log('');
+//});
 //cup of coffee
 setInterval(function() {
   https.get(`https://yt-cc.herokuapp.com/`);
