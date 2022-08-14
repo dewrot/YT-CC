@@ -16,7 +16,6 @@ var server = http.createServer(function(req,res){
     buffer1 += decoder.end();
     
     if (buffer1 == ''){
-      console.log('');
       //console.log(timeStamp);
       console.log('Received empty payload, IGNORING!');
       console.log('');
@@ -52,6 +51,7 @@ server.listen(3000,function(){
 */
 //cup of coffee
 setInterval(function() {
+  console.log('Taking a sip of coffee...');
   https.get(`https://yt-cc.herokuapp.com/`);
 }, 300000);
 
